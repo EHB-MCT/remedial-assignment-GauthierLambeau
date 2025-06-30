@@ -1,22 +1,27 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
+using TMPro;
+
 public class MoneyManager : MonoBehaviour
 {
     public static MoneyManager Instance;
-    public int currentMoney = 0;
-    public Text moneyText;
+    public int currentMoney = 100;
+    public TextMeshProUGUI moneyText;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        UpdateMoneyUI();
+    }
+
     public void AddMoney(int amount)
     {
         currentMoney += amount;
-        moneyText.text = "Money: " + currentMoney;
+        UpdateMoneyUI();
     }
 
     public bool SpendMoney(int amount)
@@ -24,9 +29,15 @@ public class MoneyManager : MonoBehaviour
         if (currentMoney >= amount)
         {
             currentMoney -= amount;
-            moneyText.text = "Money: " + currentMoney;
+            UpdateMoneyUI();
             return true;
         }
         return false;
+    }
+
+    private void UpdateMoneyUI()
+    {
+        if (moneyText != null)
+            moneyText.text = "Money: " + currentMoney;
     }
 }
