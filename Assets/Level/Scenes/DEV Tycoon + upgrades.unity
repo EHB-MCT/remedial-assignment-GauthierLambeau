@@ -2058,6 +2058,7 @@ GameObject:
   - component: {fileID: 1174478721}
   - component: {fileID: 1174478720}
   - component: {fileID: 1174478719}
+  - component: {fileID: 1174478722}
   m_Layer: 5
   m_Name: Building Button 4
   m_TagString: Untagged
@@ -2179,6 +2180,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174478717}
   m_CullTransparentMesh: 1
+--- !u!114 &1174478722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174478717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062aaf7b5ecdaa646bcfff82c7a17410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingName: Building 4
+  baseCost: 1000
+  costText: {fileID: 1752712434}
 --- !u!1 &1179919787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,6 +2328,7 @@ GameObject:
   - component: {fileID: 1221186134}
   - component: {fileID: 1221186133}
   - component: {fileID: 1221186132}
+  - component: {fileID: 1221186135}
   m_Layer: 5
   m_Name: Building Button 2
   m_TagString: Untagged
@@ -2433,6 +2450,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221186130}
   m_CullTransparentMesh: 1
+--- !u!114 &1221186135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221186130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062aaf7b5ecdaa646bcfff82c7a17410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingName: Building 2
+  baseCost: 200
+  costText: {fileID: 274689046}
 --- !u!1 &1429969027
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,6 +2747,7 @@ GameObject:
   - component: {fileID: 1593367004}
   - component: {fileID: 1593367003}
   - component: {fileID: 1593367002}
+  - component: {fileID: 1593367005}
   m_Layer: 5
   m_Name: Building Button 1
   m_TagString: Untagged
@@ -2836,6 +2869,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593367000}
   m_CullTransparentMesh: 1
+--- !u!114 &1593367005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593367000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062aaf7b5ecdaa646bcfff82c7a17410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingName: Building 1
+  baseCost: 100
+  costText: {fileID: 712168607}
 --- !u!1 &1693899610
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,6 +3221,7 @@ GameObject:
   - component: {fileID: 1821342746}
   - component: {fileID: 1821342745}
   - component: {fileID: 1821342744}
+  - component: {fileID: 1821342747}
   m_Layer: 5
   m_Name: Building Button 3
   m_TagString: Untagged
@@ -3294,6 +3343,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821342742}
   m_CullTransparentMesh: 1
+--- !u!114 &1821342747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821342742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062aaf7b5ecdaa646bcfff82c7a17410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingName: Building 3
+  baseCost: 500
+  costText: {fileID: 282956342}
 --- !u!1 &1868863827
 GameObject:
   m_ObjectHideFlags: 0
