@@ -3,15 +3,14 @@ using UnityEngine.EventSystems;
 
 public class BuildingPlacer : MonoBehaviour
 {
-    public GameObject[] buildingPrefabs; // Liste des prefabs de bâtiments
-    public int[] buildingCosts; // Coûts associés aux bâtiments
+    public GameObject[] buildingPrefabs;
+    public int[] buildingCosts;
     private int selectedBuildingIndex = 0;
 
-    public LayerMask placementLayer; // Assure-toi que le sol est dans ce Layer
+    public LayerMask placementLayer;
 
     void Update()
     {
-        // Empêche le placement si on clique sur un élément UI
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
         if (Input.GetMouseButtonDown(0))
@@ -35,7 +34,8 @@ public class BuildingPlacer : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 100f, placementLayer))
         {
-            int cost = buildingCosts[selectedBuildingIndex];
+            int baseCost = buildingCosts[selectedBuildingIndex];
+            int cost = UpgradeManager.GetReducedCost(baseCost); // <-- Utilisation de la réduction de coût
             if (MoneyManager.Instance.SpendMoney(cost))
             {
                 Instantiate(buildingPrefabs[selectedBuildingIndex], hit.point, Quaternion.identity);

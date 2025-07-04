@@ -1,9 +1,21 @@
 using UnityEngine;
-
 public class Building : MonoBehaviour
 {
-    public int moneyPerSecond = 1;
+    public int baseMoneyPerSecond = 1;
+    public int moneyPerSecond;
+
     private float timer = 0f;
+
+    void Awake()
+{
+    moneyPerSecond = baseMoneyPerSecond;
+
+    if (UpgradeManager.Instance != null)
+    {
+        UpgradeManager.ApplyUpgradesToBuilding(this);
+    }
+}
+
 
     void Update()
     {
@@ -15,4 +27,5 @@ public class Building : MonoBehaviour
         }
     }
 }
+
 
