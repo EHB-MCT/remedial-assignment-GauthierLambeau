@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "286337186558",
+    "project_id": "remedial-assignment---gauthier",
+    "storage_bucket": "remedial-assignment---gauthier.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286337186558:android:62f6137f9b9b8b539cc3af",
+        "android_client_info": {
+          "package_name": "com.EHB.RemedialAssignementGauthier"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEZibnsRSBVUDMgjIEBBKW-PoHuCr5ep4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
