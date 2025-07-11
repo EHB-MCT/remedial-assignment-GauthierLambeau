@@ -2,6 +2,7 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     public int baseMoneyPerSecond = 1;
+    public string buildingType;
     public int moneyPerSecond;
 
     private float timer = 0f;

@@ -14,7 +14,6 @@ public class FirebaseInitializer : MonoBehaviour
             if (status == DependencyStatus.Available)
             {
                 var app = FirebaseApp.DefaultInstance;
-                app.Options.DatabaseUrl = new System.Uri("https://console.firebase.google.com/u/0/project/remedial-assignment---gauthier/firestore/databases/-default-/data");
                 Debug.Log("<color=green>✅ Firebase est initialisé avec succès !</color>");
 
                 // 🔽 On appelle la fonction de test juste après

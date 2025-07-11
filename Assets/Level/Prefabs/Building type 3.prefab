@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMoneyPerSecond: 50
+  buildingType: Capsule
   moneyPerSecond: 50

@@ -122,4 +122,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMoneyPerSecond: 10
+  buildingType: Sphere
   moneyPerSecond: 10

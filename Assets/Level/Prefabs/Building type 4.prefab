@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMoneyPerSecond: 100
+  buildingType: Cylinder
   moneyPerSecond: 100

@@ -122,4 +122,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMoneyPerSecond: 2
+  buildingType: Square
   moneyPerSecond: 2
