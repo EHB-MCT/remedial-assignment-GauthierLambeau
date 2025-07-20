@@ -9,7 +9,6 @@ public class AutoSaveManager : MonoBehaviour
         SaveBeforeExit();
     }
 
-    // Tu peux aussi appeler ceci manuellement quand le joueur termine la partie
     public void SaveBeforeExit()
     {
         if (hasSaved) return;

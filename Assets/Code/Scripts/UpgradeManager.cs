@@ -110,12 +110,24 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-public static UpgradeManager Instance;
-
-private void Awake()
+    public void RestoreUpgrade(string upgradeName)
 {
-    Instance = this;
+    foreach (var upgrade in upgrades)
+    {
+        if (upgrade.upgradeName == upgradeName)
+        {
+            upgrade.purchased = true;
+            if (upgrade.upgradeButton != null)
+                upgrade.upgradeButton.interactable = false;
+            ApplyUpgrade(upgrade);
+        }
+    }
 }
 
+    public static UpgradeManager Instance;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
 }

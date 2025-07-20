@@ -17,5 +17,4 @@ public class IncomeDisplay : MonoBehaviour
     }
     incomeText.text = "Money/ sec : " + totalIncome;
 }
-
 }

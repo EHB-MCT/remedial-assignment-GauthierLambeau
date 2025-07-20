@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Firebase.Firestore;
+using Firebase.Extensions;
 
 public class PlayerLogin : MonoBehaviour
 {
@@ -21,12 +23,26 @@ public class PlayerLogin : MonoBehaviour
         if (!string.IsNullOrEmpty(pseudo))
         {
             PlayerName = pseudo;
-            loginPanel.SetActive(false); 
-            
+            loginPanel.SetActive(false);
+
+            FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+            var docRef = db.Collection("players").Document(PlayerName);
+            docRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
+            {
+                if (task.Result.Exists)
+                {
+                  
+                    FirebaseSaver.Instance.RestoreSessionFromSnapshot(task.Result);
+                }
+                else
+                {
+                    MoneyManager.Instance.currentMoney = 100; 
+                    MoneyManager.Instance.SendMessage("UpdateMoneyUI");
+                }
+            });
         }
         else
         {
-           
             Debug.LogWarning("please enter a valid name.");
         }
     }

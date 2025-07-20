@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b9994f74faa3947993898af6a35462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingTypeName: 
   baseMoneyPerSecond: 2
   buildingType: Square
   moneyPerSecond: 2

@@ -35,7 +35,7 @@ public class BuildingPlacer : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100f, placementLayer))
         {
             int baseCost = buildingCosts[selectedBuildingIndex];
-            int cost = UpgradeManager.GetReducedCost(baseCost); // <-- Utilisation de la réduction de coût
+            int cost = UpgradeManager.GetReducedCost(baseCost); 
             if (MoneyManager.Instance.SpendMoney(cost))
             {
                 Instantiate(buildingPrefabs[selectedBuildingIndex], hit.point, Quaternion.identity);
@@ -46,4 +46,22 @@ public class BuildingPlacer : MonoBehaviour
             }
         }
     }
+
+
+    public void ForceSpawnBuilding(string buildingType)
+{
+    for (int i = 0; i < buildingPrefabs.Length; i++)
+    {
+        var prefab = buildingPrefabs[i];
+        var building = prefab.GetComponent<Building>();
+        if (building != null && building.buildingType == buildingType)
+        {
+     
+            Vector3 spawnPos = new Vector3(Random.Range(-5,5), 0, Random.Range(-5,5));
+            Instantiate(buildingPrefabs[i], spawnPos, Quaternion.identity);
+            break;
+        }
+    }
+}
+
 }
