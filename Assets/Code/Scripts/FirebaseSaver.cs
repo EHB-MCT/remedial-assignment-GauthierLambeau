@@ -1,88 +1,63 @@
-using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Firestore;
-using Firebase.Extensions;
+using System.Collections.Generic;
 
 public class FirebaseSaver : MonoBehaviour
 {
     public static FirebaseSaver Instance;
 
-    private FirebaseFirestore db;
-
     private void Awake()
     {
         if (Instance == null)
-        {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-            db = FirebaseFirestore.DefaultInstance;
-        }
         else
-        {
             Destroy(gameObject);
-        }
     }
 
-    public void SavePlayerData(int money, Dictionary<string, int> buildingsByType, List<string> purchasedUpgrades)
+    public void SavePlayerData(int money, Dictionary<string, int> buildingCounts, List<string> upgrades)
     {
-        string playerId = PlayerPrefs.GetString("player_name", "test_player"); // Utilise le nom du joueur si disponible
+        if (string.IsNullOrEmpty(PlayerLogin.PlayerName))
+        {
+            Debug.LogWarning("⛔ Aucun nom de joueur défini. Impossible de sauvegarder.");
+            return;
+        }
 
-        DocumentReference docRef = db.Collection("players").Document(playerId);
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+        DocumentReference docRef = db.Collection("players").Document(PlayerLogin.PlayerName);
 
         Dictionary<string, object> data = new Dictionary<string, object>
         {
             { "money", money },
-            { "buildings", buildingsByType },
-            { "upgrades", purchasedUpgrades }
+            { "buildings", buildingCounts },
+            { "upgrades", upgrades }
         };
 
-        docRef.SetAsync(data).ContinueWithOnMainThread(task =>
+        docRef.SetAsync(data).ContinueWith(task =>
         {
             if (task.IsCompleted && !task.IsFaulted)
             {
-                Debug.Log("<color=cyan>✅ Données sauvegardées dans Firestore !</color>");
+                Debug.Log("<color=green>✅ Sauvegarde réussie pour " + PlayerLogin.PlayerName + "</color>");
             }
             else
             {
-                Debug.LogError("❌ Erreur de sauvegarde Firestore : " + task.Exception);
+                Debug.LogError("❌ Erreur lors de la sauvegarde : " + task.Exception);
             }
         });
     }
 
+    // Simulé pour l’exemple : à adapter selon ton jeu
     public Dictionary<string, int> CountBuildingsByType()
     {
-        Dictionary<string, int> buildingCounts = new Dictionary<string, int>();
-        Building[] buildings = FindObjectsOfType<Building>();
-
-        foreach (var building in buildings)
+        Dictionary<string, int> example = new Dictionary<string, int>
         {
-            string name = building.name.Replace("(Clone)", "").Trim();
-
-            if (buildingCounts.ContainsKey(name))
-                buildingCounts[name]++;
-            else
-                buildingCounts[name] = 1;
-        }
-
-        return buildingCounts;
+            { "farm", 3 },
+            { "factory", 1 }
+        };
+        return example;
     }
 
     public List<string> GetPurchasedUpgrades()
     {
-        List<string> purchased = new List<string>();
-        UpgradeManager upgradeManager = FindObjectOfType<UpgradeManager>();
-
-        if (upgradeManager != null)
-        {
-            foreach (var upg in upgradeManager.upgrades)
-            {
-                if (upg.purchased)
-                {
-                    purchased.Add(upg.upgradeName);
-                }
-            }
-        }
-
-        return purchased;
+        return new List<string> { "double_income", "cost_reduction" };
     }
 }
