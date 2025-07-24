@@ -42,7 +42,7 @@ public class BuildingPlacer : MonoBehaviour
             }
             else
             {
-                Debug.Log("Pas assez d'argent pour placer ce bâtiment.");
+                Debug.Log("Not enough money to build.");
             }
         }
     }

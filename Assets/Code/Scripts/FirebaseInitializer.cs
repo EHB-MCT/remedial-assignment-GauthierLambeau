@@ -14,13 +14,13 @@ public class FirebaseInitializer : MonoBehaviour
             if (status == DependencyStatus.Available)
             {
                 var app = FirebaseApp.DefaultInstance;
-                Debug.Log("<color=green>✅ Firebase est initialisé avec succès !</color>");
+                Debug.Log("<color=green>✅ Firebase is initialised !</color>");
 
                 WriteTestDataToFirestore();
             }
             else
             {
-                Debug.LogError("❌ Firebase non disponible : " + status.ToString());
+                Debug.LogError("❌ Firebase not available : " + status.ToString());
             }
         });
     }
@@ -42,11 +42,11 @@ public class FirebaseInitializer : MonoBehaviour
         {
             if (task.IsCompleted && !task.IsFaulted)
             {
-                Debug.Log("<color=cyan>✅ Données test enregistrées dans Firestore !</color>");
+                Debug.Log("<color=cyan>✅ Test data saved inside Firestore !</color>");
             }
             else
             {
-                Debug.LogError("❌ Erreur d'écriture Firestore : " + task.Exception);
+                Debug.LogError("❌ Error with the Firestore : " + task.Exception);
             }
         });
     }
