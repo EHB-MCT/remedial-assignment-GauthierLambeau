@@ -57,7 +57,7 @@ public class BuildingPlacer : MonoBehaviour
         if (building != null && building.buildingType == buildingType)
         {
      
-            Vector3 spawnPos = new Vector3(Random.Range(-5,5), 0, Random.Range(-5,5));
+            Vector3 spawnPos = new Vector3(Random.Range(-10,10), -2, Random.Range(-3,17));
             Instantiate(buildingPrefabs[i], spawnPos, Quaternion.identity);
             break;
         }

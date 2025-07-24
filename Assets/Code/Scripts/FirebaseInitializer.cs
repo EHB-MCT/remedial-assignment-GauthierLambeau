@@ -16,7 +16,6 @@ public class FirebaseInitializer : MonoBehaviour
                 var app = FirebaseApp.DefaultInstance;
                 Debug.Log("<color=green>✅ Firebase est initialisé avec succès !</color>");
 
-                // 🔽 On appelle la fonction de test juste après
                 WriteTestDataToFirestore();
             }
             else
