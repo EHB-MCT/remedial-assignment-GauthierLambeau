@@ -1,29 +1,30 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/BhMy8Rjk)
 # Tycoon Simulator
 
-Project Overview
+## Project Overview
+
 This Unity project is a simple tycoon-style game where players place buildings that generate money over time. The player uses the generated money to purchase more buildings and various upgrades that boost income. Players start by entering a username which links their progress to an online database (Firebase Firestore). If the username exists, the saved session is loaded so players can continue their previous game with saved money, buildings, and upgrades.
 
-How to Run
-Open the project in Unity (version 2021.3 LTS or later recommended).
+## How to Run
+1.Open the project in Unity (version 2021.3 LTS or later recommended).
 
-Open the scene Scenes/Game.unity.
+2.Open the scene Scenes/Game.unity.
 
-Press "Play" to start the game.
+3.Press "Play" to start the game.
 
-Enter a username to load or start a new session.
+4.Enter a username to load or start a new session.
 
-Place buildings, earn money, and purchase upgrades to progress.
+5.Place buildings, earn money, and purchase upgrades to progress.
 
-How to Develop
-Prerequisites
+## How to Develop
+### Prerequisites
 Unity 2021.3 LTS or later
 
 Basic C# and Unity knowledge
 
 Firebase account and set up for Firestore database
 
-Development Setup
+### Development Setup
 Clone the repository:
 
 text
@@ -52,7 +53,7 @@ Check Firestore database for saved player data accuracy.
 
 Exit and relaunch using the same username to verify that the saved session loads correctly.
 
-Folder Structure
+## Folder Structure
 text
 Assets/
 ├── Art/ 
@@ -87,7 +88,7 @@ Assets/
 └── 
 Packages/                 # Other needed packages
 
-Documentation
+## Documentation
 The project follows a modular structure with singleton managers for core logic (MoneyManager, UpgradeManager, FirebaseSaver).
 
 Persistent data is stored in Firebase Firestore. Data structure includes:
@@ -102,30 +103,30 @@ Upon entering a username, the system queries Firestore to load existing data or 
 
 AutoSaveManager triggers data save when the application closes, ensuring progress persistence.
 
-Key Scripts
-PlayerLogin.cs: Manages username input and session loading.
+## Key Scripts
+- `PlayerLogin.cs`: Manages username input and session loading.
 
-MoneyManager.cs: Tracks player's money and updates the UI.
+- `MoneyManager.cs`: Tracks player's money and updates the UI.
 
-Building.cs: Defines behavior of buildings generating money per second.
+- `Building.cs`: Defines behavior of buildings generating money per second.
 
-BuildingPlacer.cs: Handles user building placement and costs.
+- `BuildingPlacer.cs`: Handles user building placement and costs.
 
-UpgradeManager.cs: Manages upgrades purchase and application to buildings.
+- `UpgradeManager.cs`: Manages upgrades purchase and application to buildings.
 
-FirebaseSaver.cs: Responsible for interfacing with Firebase Firestore to save/load player data.
+- `FirebaseSaver.cs`: Responsible for interfacing with Firebase Firestore to save/load player data.
 
-AutoSaveManager.cs: Auto-saves progress on application quit.
+ - `AutoSaveManager.cs`: Auto-saves progress on application quit.
 
-FirebaseInitializer.cs: Initializes Firebase SDK and checks dependencies.
+- `FirebaseInitializer.cs`: Initializes Firebase SDK and checks dependencies.
 
-References
-AI Assistance: Used [ChatGPT](https://chatgpt.com/share/688257af-2470-8005-b71c-607ccf34a983) for coding assistance and debugging during development.
+ ## References
+- AI Assistance: Used [ChatGPT](https://chatgpt.com/share/688257af-2470-8005-b71c-607ccf34a983) for coding assistance and debugging during development.
 
-Firebase Implementation: Followed official [Firebase](https://firebase.google.com/docs/) Unity tutorials and documentation.
+- Firebase Implementation: Followed official [Firebase](https://firebase.google.com/docs/) Unity tutorials and documentation.
 
-Project Inspiration: Tycoon game concept for a educational purposes.
+- Project Inspiration: Tycoon game concept for a educational purposes.
 
-Attribution & License
+## Attribution & License
 This project was developed by Gauthier Lambeau.
 Licensed under the MIT License — see LICENSE.md file for details.
