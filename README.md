@@ -25,10 +25,7 @@ Basic C# and Unity knowledge
 Firebase account and set up for Firestore database
 
 ### Development Setup
-Clone the repository:
-
-text
-git clone <https://github.com/EHB-MCT/remedial-assignment-GauthierLambeau>
+`Clone the repository`: <https://github.com/EHB-MCT/remedial-assignment-GauthierLambeau>
 Open the project with Unity Hub.
 
 Configure Firebase in the project by adding google-services.json (Android) or GoogleService-Info.plist (iOS) inside Assets/.
@@ -54,19 +51,17 @@ Check Firestore database for saved player data accuracy.
 Exit and relaunch using the same username to verify that the saved session loads correctly.
 
 ## Folder Structure
-text
 Assets/
-├── Art -> Materials - Model - textures 
-├── Code-> Scripts.cs -> AutoSaveManager.cs - Building.cs - BuildingPlacer.cs - BuildingUIElements.cs -FirebaseInitializer.cs ─ FirebaseSaver.cs ─ IncomeDisplay.cs ─ Moneymanager.cs ─ PlayerData.cs ─ PlayerLogin.cs ─ UpgradeManager.cs
-├── Editor Default Resources
-├── ExternalDependencyManager
-├── Firebase
-├── Level -> Prefabs/ ─ Scnenes/ ─> Game.unity ─ Previous save version.unity  
-├── Plugins
-├── StreamingAssets
-├── TextMesh Pro 
-├── docs    
-└── 
+-  Art -> Materials - Model - textures
+-  Code-> Scripts.cs -> AutoSaveManager.cs - Building.cs - BuildingPlacer.cs - BuildingUIElements.cs -FirebaseInitializer.cs ─ FirebaseSaver.cs ─ IncomeDisplay.cs ─ Moneymanager.cs ─          PlayerData.cs ─ PlayerLogin.cs ─ UpgradeManager.cs
+-  ditor Default Resources
+-   xternalDependencyManager
+-     irebase
+- Level -> Prefabs/ ─ Scnenes/ ─> Game.unity ─ Previous save version.unity
+-  Plugins
+-   StreamingAssets
+-   TextMesh Pro
+-   docs
 Packages/                 # Other needed packages
 
 ## Documentation
@@ -74,11 +69,11 @@ The project follows a modular structure with singleton managers for core logic (
 
 Persistent data is stored in Firebase Firestore. Data structure includes:
 
-money: Player's current money.
+`money`: Player's current money.
 
-buildings: Dictionary of building types and their counts.
+`buildings`: Dictionary of building types and their counts.
 
-upgrades: List of purchased upgrade names.
+`upgrades`: List of purchased upgrade names.
 
 Upon entering a username, the system queries Firestore to load existing data or starts a fresh session if none exists.
 
