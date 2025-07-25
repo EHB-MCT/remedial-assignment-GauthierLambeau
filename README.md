@@ -33,16 +33,16 @@ Open the project with Unity Hub.
 
 Configure Firebase in the project by adding google-services.json (Android) or GoogleService-Info.plist (iOS) inside Assets/.
 
-Key Development Tasks
-Building System: Manage building prefabs under Assets/Level/Prefabs.
+## Key Development Tasks
+`Building System`: Manage building prefabs under Assets/Level/Prefabs.
 
-Money & Upgrade System: Scripts located in Assets/Scripts, manage the economic simulation.
+`Money & Upgrade System`: Scripts located in Assets/Scripts, manage the economic simulation.
 
-Firebase Integration: Located in Assets/Scripts/FirebaseSaver.cs and Assets/Scripts/FirebaseInitializer.cs. Responsible for saving and loading player data with Firestore.
+`Firebase Integration`: Located in Assets/Scripts/FirebaseSaver.cs and Assets/Scripts/FirebaseInitializer.cs. Responsible for saving and loading player data with Firestore.
 
-AutoSave & Session Management: Auto-save player progress on quit and load data on session start.
+`AutoSave & Session Management`: Auto-save player progress on quit and load data on session start.
 
-Testing
+## Testing
 Run the game in Unity editor and simulate gameplay.
 
 Verify that placing buildings increases income per second.
@@ -56,31 +56,12 @@ Exit and relaunch using the same username to verify that the saved session loads
 ## Folder Structure
 text
 Assets/
-├── Art/ 
-│   ├── Materials
-│   ├── Model
-│   └── textures 
-├── Code/
-│   └── Scripts.cs
-│       ├── AutoSaveManager.cs
-│       ├── Building.cs
-│       ├── BuildingPlacer.cs
-│       ├── BuildingUIElements.cs
-│       ├── FirebaseInitializer.cs
-│       ├── FirebaseSaver.cs
-│       ├── IncomeDisplay.cs
-│       ├── Moneymanager.cs
-│       ├── PlayerData.cs
-│       ├── PlayerLogin.cs
-│       └── UpgradeManager.cs
+├── Art -> Materials - Model - textures 
+├── Code-> Scripts.cs -> AutoSaveManager.cs - Building.cs - BuildingPlacer.cs - BuildingUIElements.cs -FirebaseInitializer.cs ─ FirebaseSaver.cs ─ IncomeDisplay.cs ─ Moneymanager.cs ─ PlayerData.cs ─ PlayerLogin.cs ─ UpgradeManager.cs
 ├── Editor Default Resources
 ├── ExternalDependencyManager
 ├── Firebase
-├── Level/
-│   ├── Prefabs/         
-│   └── Scnenes/         
-│       ├── Game.unity
-│       └── Previous save version.unity  
+├── Level -> Prefabs/ ─ Scnenes/ ─> Game.unity ─ Previous save version.unity  
 ├── Plugins
 ├── StreamingAssets
 ├── TextMesh Pro 
@@ -129,4 +110,5 @@ AutoSaveManager triggers data save when the application closes, ensuring progres
 
 ## Attribution & License
 This project was developed by Gauthier Lambeau.
+
 Licensed under the MIT License — see LICENSE.md file for details.
