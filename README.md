@@ -95,6 +95,14 @@ AutoSaveManager triggers data save when the application closes, ensuring progres
  - `AutoSaveManager.cs`: Auto-saves progress on application quit.
 
 - `FirebaseInitializer.cs`: Initializes Firebase SDK and checks dependencies.
+  
+## Visual game images
+<img width="581" height="324" alt="image" src="https://github.com/user-attachments/assets/74a1b0c1-bef6-4e6b-9bb4-147423fc2bb0" />
+<img width="578" height="314" alt="image" src="https://github.com/user-attachments/assets/5e2d91e6-cba2-412e-9d63-b54fdbc2edf5" />
+
+
+## Visual database images
+<img width="991" height="427" alt="image" src="https://github.com/user-attachments/assets/759509c1-937f-47e2-9e79-bb96d4324c42" />
 
  ## References
 - AI Assistance: Used [ChatGPT](https://chatgpt.com/share/688257af-2470-8005-b71c-607ccf34a983) for coding assistance and debugging during development.
